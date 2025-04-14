@@ -13,21 +13,23 @@ void display();
 void push(int item) {
   if (top == n - 1) {
     printf("Stack Full\n");
+  } else {
+    top++;
+    stack[top] = item;
+    printf("%d pushed into stack\n", item);
+    /*display();*/
   }
-  top++;
-  stack[top] = item;
-  printf("%d pushed into stack\n", item);
-  display();
 }
 
 void pop() {
   if (top == -1) {
     printf("Stack Underflow!\n");
+  } else {
+    int item = stack[top];
+    printf("%d poped out of stack\n", stack[top]);
+    top--;
+    /*display();*/
   }
-  int item = stack[top];
-  printf("%d poped out of stack\n", stack[top]);
-  top--;
-  display();
 }
 
 void display() {
